@@ -29,7 +29,7 @@ Telegram::Bot::Client.new(TOKEN).run do |bot|
           answers = ['сам пошел нахуй','Ем Детей на Донбассе', 'Я вахуе', 'пиздос', 'yyy, иди-ка ты нахуй', 'Он уже занят- на нем твоя мамка',  "#{message&.chat&.first_name} соси писос"]
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when 'Пух, ты куришь?'
-          answers = ['шманаю под падиком']
+          answers = ['шманаю под падиком', 'нет']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when 'Пух, го пивка бахнем?'
           answers = ['Ток если Балтику семерку', 'У тебя ещё волосы на яйцах не выросли шоб со мной пить']
