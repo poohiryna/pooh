@@ -14,19 +14,16 @@ Telegram::Bot::Client.new(TOKEN).run do |bot|
           answers = ['Выполз из @kartseva_iryna', 'Я внебрачный сын @kartseva_iryna']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
           when 'Ебани разок'
-            answers = ['Кинешь мусор - прострелю колено', 'лгбт говно', 'Ебу свою киску', 'Где мой член', 'Шлюха',  'полижи', "#{message&.chat&.first_name} ты же шел дрочить", 'енот ты же ишел дрочить', 'привет мой сладенький нубасик', 'Жук тётя шлюха', 'жук добрый']
+            answers = ['Кинешь мусор - прострелю колено','угадай число или напиши да','Жук, ты гей?', 'Скажи гей', 'Не люблю мусоров, бывший мусор был', 'Жук ебанет', 'Кинь свою любимый трек', 'Утром на твиче, вечером на вебке', 'Трахаться можно только вечером', 'лгбт говно', 'Ебу свою киску', 'Где мой член', 'Шлюха',  'полижи', "#{message&.chat&.first_name} ты же шел дрочить", 'енот ты же ишел дрочить', 'привет мой сладенький нубасик', 'Жук тётя шлюха', 'жук добрый']
             bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
           when 'Скинь член'
-            answers = ['Не кидай сюда члены!', 'Сейчас я макаю член в Lipton', 'подрочить хочешь?']
+            answers = ['Не кидай сюда члены!', 'Тебя трахну позже', 'Сейчас я макаю член в Lipton', 'подрочить хочешь?']
             bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when '/help'
-          answers = ['Детские приколы', 'лобок', 'Пид()рские будни', 'онлик2', 'онлик', 'ссылки', 'Ебани разок', 'Правила', 'Пух, а кто тебя сделал?', 'Донбасс', 'скинь член']
+          answers = ['Детские приколы', 'лобок', 'Пид()рские будни', 'ссылки', 'Ебани разок', 'Правила', 'Пух, а кто тебя сделал?', 'Донбасс', 'скинь член']
           bot.api.send_message(chat_id: message.chat.id, text: answers.join("\n"))
-        when 'Онлик'
-          answers = ["https://onlyfans.com/kartseva_iryna"]
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when 'Лобок'
-          answers = ["#{message&.chat&.first_name} иди пососи хуйца", 'хавайся', "брачная хуита?\nда или нет?"]
+          answers = ["#{message&.chat&.first_name} иди пососи хуйца", 'Есть мыло, ребят? Жить надоело', 'Бля, пойду повешусь', 'О выеби нас', 'хавайся', "брачная хуита?\nда или нет?"]
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when 'Да'
           answers = ['ПИЗДА', 'ПОебалуНА', 'манда', 'Уебать бы тебе чем-нибудь тяжелым', 'отвечает тупорылая пизда']
@@ -34,8 +31,11 @@ Telegram::Bot::Client.new(TOKEN).run do |bot|
         when 'Нет'
           answers = ['Вкусный винегрет?', 'Сука! Из яйца омлет', 'Из сосны паркет, блядь', 'Да', 'Скажи Да', 'иди в пизду', 'блять, теперь придумывать нужно что-то', 'Значит пошул нахуй', 'лучше скажи Да', 'Добрый дядя Фред', 'Мой менталитет', 'Голодный муравьед', 'Ну и п#д0%@ ответ', 'Из жука паштет', 'Старый добрый дед', 'Восемь здесь планет', 'Пламенный привет']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Онлик2'
-          answers = ["https://onlyfans.com/kartseva.iryna"]
+        when 'Или'
+          answers = ['Ты тупой? Да или Нет?']
+          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
+        when 'Гей'
+          answers = ['Иди нахуй']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when 'Ссылки'
           answers = ["https://t.me/kartsevaair/2641"]
