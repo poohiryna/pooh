@@ -11,93 +11,64 @@ Telegram::Bot::Client.new(TOKEN).run do |bot|
       when Telegram::Bot::Types::Message
         case message.text
         when 'Пух, а кто тебя сделал?'
-          answers = ['Выполз из @kartseva_iryna', 'Я внебрачный сын @kartseva_iryna']
+          answers = ['Выполз из @kartseva_iryna', 'Я внебрачный сын @kartseva_iryna', 'мать @kartseva_iryna, отец @dmitrybereza']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-          when 'Ебани разок'
-            answers = ['Кинешь мусор - прострелю колено','угадай число или напиши да','Жук, ты гей?', 'Скажи гей', 'Не люблю мусоров, бывший мусор был', 'Жук ебанет', 'Кинь свою любимый трек', 'Утром на твиче, вечером на вебке', 'Трахаться можно только вечером', 'лгбт говно', 'Ебу свою киску', 'Где мой член', 'Шлюха',  'полижи', "#{message&.chat&.first_name} ты же шел дрочить", 'енот ты же ишел дрочить', 'привет мой сладенький нубасик', 'Жук тётя шлюха', 'жук добрый']
-            bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-          when 'Скинь член'
-            answers = ['Не кидай сюда члены!', 'Тебя трахну позже', 'Сейчас я макаю член в Lipton', 'подрочить хочешь?']
-            bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when '/help'
-          answers = ['Детские приколы', 'лобок', 'Пид()рские будни', 'ссылки', 'Ебани разок', 'Правила', 'Пух, а кто тебя сделал?', 'Донбасс', 'скинь член']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.join("\n"))
-        when 'Лобок'
-          answers = ["#{message&.chat&.first_name} иди пососи хуйца", 'Есть мыло, ребят? Жить надоело', 'Бля, пойду повешусь', 'О выеби нас', 'хавайся', "брачная хуита?\nда или нет?"]
+          answers = ['не хочу']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Да'
-          answers = ['ПИЗДА', 'ПОебалуНА', 'манда', 'Уебать бы тебе чем-нибудь тяжелым', 'отвечает тупорылая пизда']
+        when /пух/, /Украина/, /Россия/, /мать/, /а/, /не/, /нюдсы/
+          answers = ["#{message&.chat&.first_name} иди пососи хуйца", 'подрочить хочешь?', 'Ты мне блять хуйню не заливай','Ты нищий какие нюдсы', 'Денег дай, а потом проси', 'Мне было грустно и одиноко и я увидела его, банан', 'Где суши сука влад блять', 'Бля, пойду повешусь', 'О выеби нас', 'хавайся']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Нет'
-          answers = ['Вкусный винегрет?', 'Сука! Из яйца омлет', 'Из сосны паркет, блядь', 'Да', 'Скажи Да', 'иди в пизду', 'блять, теперь придумывать нужно что-то', 'Значит пошул нахуй', 'лучше скажи Да', 'Добрый дядя Фред', 'Мой менталитет', 'Голодный муравьед', 'Ну и п#д0%@ ответ', 'Из жука паштет', 'Старый добрый дед', 'Восемь здесь планет', 'Пламенный привет']
+        when /да/
+          answers = ['ПИЗДА', 'ПОебалуНА', 'манда', 'Уебать бы тебе чем-нибудь тяжелым', 'обезьяны шарят в развлечениях', 'отвечает тупорылая пизда']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Или'
-          answers = ['Ты тупой? Да или Нет?']
+        when /нет/
+          answers = ['Вот это топовый мульт', 'Пошел н а х у й', 'А почему один из вас не закроет ебало?', 'Да', 'Скажи Да', 'иди в пизду', 'блять, теперь придумывать нужно что-то', 'Значит пошел нахуй', 'лучше скажи Да', 'Ахуенно', 'Бл, короче', 'Шма троллит вас', 'Ну и п#д0%@ ответ', 'Он войну хочет устроить', 'Когда муркает кит - это пиздато', 'Украинцы жгут', 'Я за Украину']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Гей'
-          answers = ['Иди нахуй']
+        when /или/
+          answers = ['Да или Нет?']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Ссылки'
-          answers = ["https://t.me/kartsevaair/2641"]
+        when /dick/
+          answers = ['Иди нахуй', '-10 см в члене']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Пид()рские будни'
-          answers = ["чпокнул #{message&.chat&.first_name}", 'енот нормальный', 'геев не люблю', 'не хочу в попку', 'енот пидр']
+        when /приват/
+          answers = ['Привет, приват 900 гривен. Видео и фото. Более 600 публикаций']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when '/help@pooh_pooh_bot'
-          answers = ['Детские приколы', 'лобок', 'Пид()рские будни', 'онлик2', 'онлик', 'ссылки', 'Ебани разок', 'Правила', 'Пух, а кто тебя сделал?', 'Донбасс', 'скинь член']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.join("\n"))
-        when 'Детские приколы'
-          answers = ['скажи клей', 'скажи подвал', 'скажи кукуруза', 'скажи кружка', 'скажи аврора', 'скажи май', 'скажи кирпич', 'скажи арбуз', 'скажи ЗИЛ', 'скажи дура', 'скажи двести', 'скажи гараж', 'скажи газ', 'скажи воровка', 'скажи ваза', 'скажи баранка', 'скажи банан', 'скажи банка']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.join("\n"))
-        when 'Клей'
-          answers = ['выпей баночку соплей']
+        when /енот/, /он/
+          answers = ["чпокнул #{message&.chat&.first_name}", 'Ослепла от моего члена?', 'Ебаный бот', 'енот нормальный', 'Шутки шутками, но в попку то больно', 'геев не люблю', 'Жук тётя шлюха', 'не хочу в попку', 'енот пидр']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Май'
-          answers = ['я пукну, ты поймай']
+        when /гей/, /./
+          answers = ['Гей', 'С ботом играть в игры - это нужно быть пид*лиз*м', 'Лобок побрей', 'Тут нужен семейный врач', 'Слава Украине', 'Слава нации', 'Ебальник закрой', 'Ебани разок', 'Ты бот? LoL', 'Ебать', 'Донбасс', 'скинь член']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Кукуруза'
-          answers = ['поцелуй цыганке пузо']
+        when /член/
+          answers = ['Ботяра ты', 'Господи мне кажется я сейчас блевать буду', 'Ебал я тебя, Шма', '@dmitrybereza, сскинь письку', '@dmitrybereza жук, скинь пенис мне', 'Жук он один, а вас много', 'Пж я пытаюсь перестать говорить маты', 'Я в ахуе', 'Ха, всем сосать', 'Иди нахуй чертила', 'Чи на', 'Та ты лох', 'Нетушки']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Кружка'
-          answers = ['твоя мать болтушка']
+        when /бля/, /блять/
+          answers = ['Ты не неси ересь', 'Безкультурный']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Кирпич'
-          answers = ['твой папа бич']
+        when /нихуя/, /хуй/, /писька/
+          answers = ['Это енот письку помыл', 'Мат для лохов', 'Здоровья парню слева', 'Бот остановлен', 'Царство небесное', 'Влад сука', 'Роботы хули', 'Интимные подробности при себе оставляйте', 'РПГ - игра про ядерную войну']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Дура'
-          answers = ['у тебя красивая фигура']
+        when /стим/
+          answers = ['1238511303 - код']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Подвал'
-          answers = ['тебя скелет поцеловал']
+        when /фортнайт/, /форт/
+          answers = ['Ник poohiryna']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Аврора'
-          answers = ['снимай трусы без разговора']
+        when /кс го/, /кс/, /го/
+          answers = ['Бля ну го', 'Давай через 30 мин', 'код A9KHC-U5VG  добавляйся']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Арбуз'
-          answers = ['твой папа карапуз']
+        when /слив/, /слива/
+          answers = ['Слив? пошел ты нахуй', 'Схуяли?', 'Какие сливы? Я абрикосы люблю', 'Вот бот пиздабол']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Банка'
-          answers = ['твоя бабушка цыганка']
+        when /игры/
+          answers = ['А-ну давай скажи во что мне поиграть']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Банан'
-          answers = ['твой папа наркоман']
+        when /жук/, /еноту/
+          answers = ['Закрой рот', 'Шма забань всех', '@dmitrybereza свят!', 'Просвяти', 'Зачем жука трогаешь?', 'ты ему не интересен', 'Это вообще нацизм', 'Напиши лонг стори']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Баранка'
-          answers = ['твоя мать цыганка']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Ваза'
-          answers = ['поживи пока без газа']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Воровка'
-          answers = ['тебя мама свяжет ловко']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-          answers = ['тебе цыганка титьку даст']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Гараж'
-          answers = ['снимай трусы, иди на пляж']
-          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
-        when 'Двести'
-          answers = ['снимай трусы-иди к невесте']
+        when /Ира/, /Дима/, /Максим/, /Влад/, /Коля/, /Я/, /Ты/, /ты/
+          answers = ['Менеджер вас слушает', 'Иди нахер, я сейчас офф', 'Пошел в пизду Ты', 'Ты еблан?', 'Сосать или лизать?']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         end
       end
