@@ -13,6 +13,9 @@ Telegram::Bot::Client.new(TOKEN).run do |bot|
         when 'Кто тебя сделал?'
           answers = ['Выполз из @kartseva_iryna', 'Я внебрачный сын @kartseva_iryna', 'мать @kartseva_iryna, отец @dmitrybereza']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
+        when 'Как дела?'
+          answers = ['Выполз из @kartseva_iryna', 'Я внебрачный сын @kartseva_iryna', 'мать @kartseva_iryna, отец @dmitrybereza']
+          bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
         when '/help'
           answers = ['Помоги мне', 'Админ']
           bot.api.send_message(chat_id: message.chat.id, text: answers.sample)
